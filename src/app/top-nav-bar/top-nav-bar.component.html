@@ -1,0 +1,32 @@
+<nav id="top-nav-bar" class="nav bg-warning justify-content-end">
+  <div *ngIf="isSignedIn; then authSignOut; else authSignIn"></div>
+  <ng-template #authSignIn>
+    <a class="nav-item nav-link btn btn-light" routerLink="{{ Paths.WELCOME_PATH }}" routerLinkActive="">
+      <mat-icon class="align-bottom d-sm-none">home</mat-icon>
+      <span class="d-none d-sm-inline">Home</span>
+    </a>
+    <span class="flex-fill">
+    </span>
+    <a class="nav-item nav-link btn btn-light" routerLink="{{ Paths.REGISTER_PATH }}" routerLinkActive="">
+      <mat-icon class="align-bottom d-sm-none">edit</mat-icon>
+      <span class="d-none d-sm-inline">Register</span>
+    </a>
+    <a class="nav-item nav-link btn btn-light" routerLink="{{ Paths.SIGN_IN_PATH }}" routerLinkActive="">
+      <mat-icon class="align-bottom d-sm-none">forward</mat-icon>
+      <span class="d-none d-sm-inline">Sign In</span>
+    </a>
+  </ng-template>
+  <ng-template #authSignOut>
+    <a class="nav-item nav-link flex-fill">
+      <span id="profile-name">{{ user }}</span>
+    </a>
+    <a class="nav-item nav-link btn btn-light" routerLink="{{ Paths.MAIN_CLASSES_PATH }}" routerLinkActive="">
+      <mat-icon class="align-bottom d-sm-none">settings</mat-icon>
+      <span class="d-none d-sm-inline">Settings</span>
+    </a>
+    <a class="nav-item nav-link btn btn-light" (click)="signOut()">
+      <mat-icon class="align-bottom d-sm-none">reply</mat-icon>
+      <span class="d-none d-sm-inline">Sign Out</span>
+    </a>
+  </ng-template>
+</nav>

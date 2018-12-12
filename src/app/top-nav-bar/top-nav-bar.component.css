@@ -1,0 +1,10 @@
+#top-nav-bar {
+    padding: 4px 2px;
+}
+#top-nav-bar .nav-item {
+    margin: 0px 2px;
+}
+#top-nav-bar .nav-item:focus {
+    border: none !important;
+    box-shadow: none;
+}
