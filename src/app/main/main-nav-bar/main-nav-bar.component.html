@@ -1,0 +1,14 @@
+<nav id="main-nav-bar" class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-center">
+  <button class="navbar-toggler" type="button" (click)="_isNavBarCollapsed = !_isNavBarCollapsed"
+      data-toggle="collapse" data-target="#mainNavBarNav" aria-controls="mainNavBarNav" [attr.aria-expanded]="!_isNavBarCollapsed" aria-label="Toggle">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="_isNavBarCollapsed" class="collapse navbar-collapse" id="mainNavBarNav">
+    <div class="navbar-nav nav-pills w-100 nav-justified">
+      <a class="nav-item nav-link" routerLink="{{ Paths.MAIN_CLASSES_PATH }}" routerLinkActive="active bg-secondary">Classes</a>
+      <a class="nav-item nav-link" routerLink="{{ Paths.MAIN_TEACHERS_PATH }}" routerLinkActive="active bg-secondary">Teachers</a>
+      <a class="nav-item nav-link" routerLink="{{ Paths.MAIN_STUDENTS_PATH }}" routerLinkActive="active bg-secondary">Students</a>
+      <a class="nav-item nav-link" routerLink="{{ Paths.MAIN_SCHOOLMATES_PATH }}" routerLinkActive="active bg-secondary">Schoolmates</a>
+    </div>
+  </div>
+</nav>

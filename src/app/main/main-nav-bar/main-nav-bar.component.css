@@ -1,0 +1,13 @@
+#main-nav-bar {
+    padding: 4px 2px;
+}
+#main-nav-bar .nav-item {
+    margin: 0px 2px;
+}
+#main-nav-bar .navbar-toggler {
+    border: none;
+    margin: 1px;
+}
+#main-nav-bar .navbar-toggler:focus {
+    outline: none;
+}
