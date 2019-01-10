@@ -6,13 +6,16 @@ import { TeachersComponent } from './teachers/teachers.component';
 import { StudentsComponent } from './students/students.component';
 import { SchoolmatesComponent } from './schoolmates/schoolmates.component';
 import { Paths } from './../paths';
+import { MainGuard } from './main.guard';
 
 const routes: Routes = [
   {
     path: Paths.MAIN_SYMBOL,
     component: MainComponent,
+    canActivate: [MainGuard],
     children: [ {
       path: Paths.EMPTY_SYMBOL,
+      canActivateChild: [MainGuard],
       children: [
         { path: Paths.EMPTY_SYMBOL, redirectTo: Paths.CLASSES_SYMBOL, pathMatch: 'full' }
         , { path: Paths.CLASSES_SYMBOL, component: ClassesComponent }
